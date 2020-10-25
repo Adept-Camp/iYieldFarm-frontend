@@ -12,6 +12,7 @@ import FlashOnIcon from '@material-ui/icons/FlashOn';
 import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import WbIncandescentIcon from '@material-ui/icons/WbIncandescent';
 import DetailsIcon from '@material-ui/icons/AccountBalance';
+import LockIcon from '@material-ui/icons/Lock';
 
 const styles = theme => ({
   root: {
@@ -137,6 +138,60 @@ const styles = theme => ({
       color: colors.tomato
     },
   },
+  arbitrage: {
+    backgroundColor: colors.white,
+    '&:hover': {
+      backgroundColor: colors.compoundGreen,
+      '& .title': {
+        color: colors.white,
+      },
+      '& .icon': {
+        color: colors.white
+      }
+    },
+    '& .title': {
+      color: colors.compoundGreen,
+    },
+    '& .icon': {
+      color: colors.compoundGreen
+    },
+  },
+    vaults: {
+    backgroundColor: colors.white,
+    '&:hover': {
+      backgroundColor: colors.blue2,
+      '& .title': {
+        color: colors.white,
+      },
+      '& .icon': {
+        color: colors.white
+      }
+    },
+    '& .title': {
+      color: colors.blue2,
+    },
+    '& .icon': {
+      color: colors.blue2
+    },
+  },
+  flashloans: {
+    backgroundColor: colors.white,
+    '&:hover': {
+      backgroundColor: colors.lightning,
+      '& .title': {
+        color: colors.white,
+      },
+      '& .icon': {
+        color: colors.white
+      }
+    },
+    '& .title': {
+      color: colors.lightning,
+    },
+    '& .icon': {
+      color: colors.lightning
+    },
+  },
   balancer: {
     backgroundColor: colors.white,
     '&:hover': {
@@ -185,9 +240,9 @@ class Home extends Component {
   render() {
     const { classes, t, location } = this.props;
 
-    return (
+  return (
       <div className={ classes.root }>
-        <Card className={ `${classes.card} ${classes.pool}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
+        <Card className={ `${classes.card} ${classes.zap}` } onClick={ () => { this.nav(location.pathname+'staking') } }>
           <DetailsIcon className={ `${classes.icon} icon` } />
           <Typography variant={'h3'} className={ `${classes.title} title` }>Stake</Typography>
         </Card>
@@ -199,14 +254,18 @@ class Home extends Component {
           <HowToVoteIcon className={ `${classes.icon} icon` } />
           <Typography variant={'h3'} className={ `${classes.title} title` }>Vote</Typography>
         </Card> }
-        {<Card className={ `${classes.card} ${classes.pool}` } onClick={ () => { this.nav(location.pathname+'arbitrage') } }>
+		{ <Card className={ `${classes.card} ${classes.vaults}` } onClick={()=>{window.location.href="https://vaults.iyf.finance"}}>
+          <LockIcon className={ `${classes.icon} icon` } />
+          <Typography variant={'h3'} className={ `${classes.title} title` }>Vaults - Coming Soon</Typography>
+        </Card> }
+        {<Card className={ `${classes.card} ${classes.arbitrage}` } onClick={()=>{window.location.href="https://arbitrage-ui.iyf.finance"}}>
           <AttachMoneyIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Arbitrage</Typography>
+          <Typography variant={'h3'} className={ `${classes.title} title` }>Arbitrage UI</Typography>
         </Card>}
 		
-		{<Card className={ `${classes.card} ${classes.pool}` } onClick={ () => { this.nav(location.pathname+'flashloans') } }>
+		{<Card className={ `${classes.card} ${classes.flashloans}` } onClick={ () => { this.nav(location.pathname+'flashloans') } }>
           <FlashOnIcon className={ `${classes.icon} icon` } />
-          <Typography variant={'h3'} className={ `${classes.title} title` }>Flash Loans</Typography>
+          <Typography variant={'h3'} className={ `${classes.title} title` }>Automated Flash Loan Bot</Typography>
         </Card>}
       </div>
     )

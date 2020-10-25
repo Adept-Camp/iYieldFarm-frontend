@@ -365,7 +365,7 @@ class Vote extends Component {
               disabled={ loading }
               onClick={ () => { this.goToDashboard() } }
             >
-              <Typography variant={ 'h4'}>{t('Explore dyDx Arbitrage Oppourtunities')}</Typography>
+              <Typography variant={ 'h4'}>{t('Explore Uniswap Arbitrage Opportunities')}</Typography>
             </Button>
           </div>
         </div>
@@ -389,7 +389,9 @@ class Vote extends Component {
                 disabled={ loading }
                 onClick={ () => { this.onRegister() } }
               >
-                <Typography variant={ 'h4'}>{t('Explore Aave Arbitrage Oppourtunities')}</Typography>
+                <Typography variant={ 'h4'}>{t('Explore Kyber Arbitrage Opportunities')}</Typography>
+				<h1>COMING SOON - The IYF Arbitrage system is under construction</h1>;
+
               </Button>
             }
           </div>
@@ -417,7 +419,7 @@ class Vote extends Component {
     if(filteredProposals.length === 0) {
       return (
         <div className={ classes.claimContainer }>
-          <Typography className={ classes.stakeTitle } variant={ 'h3'}>{t('Current Arbitrage Oppourtunities will show here:')}</Typography>
+          <Typography className={ classes.stakeTitle } variant={ 'h3'}>{t('Current Arbitrage Opportunities will show here:')}</Typography>
         </div>
       )
     }

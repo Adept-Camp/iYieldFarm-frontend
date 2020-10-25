@@ -21,6 +21,7 @@ export const colors = {
   black: '#000',
   darkBlue: "#2c3b57",
   blue: "#f3f3f3",
+  blue2: "#4287f5",
   gray: "#e1e1e1",
   lightGray: "#737373",
   lightBlack: "#6a6a6a",
@@ -30,6 +31,7 @@ export const colors = {
   orange: 'orange',
   pink: '#172029',
   compoundGreen: '#00d395',
+  lightning: '#ffff00',
   tomato: '#e56b73',
   purple: '#935dff',
 

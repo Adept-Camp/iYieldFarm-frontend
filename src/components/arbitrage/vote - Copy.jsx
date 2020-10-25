@@ -365,17 +365,17 @@ class Vote extends Component {
               disabled={ loading }
               onClick={ () => { this.goToDashboard() } }
             >
-              <Typography variant={ 'h4'}>{t('Voting Dashboard')}</Typography>
+              <Typography variant={ 'h4'}>{t('Explore dyDx Arbitrage Opportunities')}</Typography>
             </Button>
           </div>
         </div>
         <div className={ classes.intro }>
           <ToggleButtonGroup value={value} onChange={this.handleTabChange} aria-label="version" exclusive size={ 'small' }>
             <ToggleButton value={0} aria-label="v1">
-              <Typography variant={ 'h4' }>{t('Done')}</Typography>
+              <Typography variant={ 'h4' }>{t('dyDx')}</Typography>
             </ToggleButton>
             <ToggleButton value={1} aria-label="v2">
-              <Typography variant={ 'h4' }>{t('Open')}</Typography>
+              <Typography variant={ 'h4' }>{t('Aave')}</Typography>
             </ToggleButton>
           </ToggleButtonGroup>
           <div className={ classes.between }>
@@ -389,7 +389,7 @@ class Vote extends Component {
                 disabled={ loading }
                 onClick={ () => { this.onRegister() } }
               >
-                <Typography variant={ 'h4'}>{t('Register To Vote')}</Typography>
+                <Typography variant={ 'h4'}>{t('Explore Aave Arbitrage Opportunities')}</Typography>
               </Button>
             }
           </div>
@@ -417,7 +417,7 @@ class Vote extends Component {
     if(filteredProposals.length === 0) {
       return (
         <div className={ classes.claimContainer }>
-          <Typography className={ classes.stakeTitle } variant={ 'h3'}>{t('There is no current IYF voting proposals at this time.')}</Typography>
+          <Typography className={ classes.stakeTitle } variant={ 'h3'}>{t('Current Arbitrage Opportunities will show here:')}</Typography>
         </div>
       )
     }
@@ -468,7 +468,7 @@ class Vote extends Component {
   }
 
   goToDashboard = () => {
-    window.open('https://gov.iyf.finance/', "_blank")
+    window.open('https://arbitrage.iyf.finance/', "_blank")
   }
 
   handleTabChange = (event, newValue) => {
@@ -529,4 +529,4 @@ class Vote extends Component {
 
 }
 
-export default withNamespaces()(withRouter(withStyles(styles)(Vote)));	
+export default withNamespaces()(withRouter(withStyles(styles)(Vote)));
